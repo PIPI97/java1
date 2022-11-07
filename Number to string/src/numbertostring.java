@@ -12,7 +12,7 @@ public class numbertostring {
             result = "this is too small";
         } else if (number == 0) {
             result = "zero";
-        } else if (number > 0 && number < 100) {
+        } else if (number < 100) {
             result = hundredsDigit(number);
         } else if (number < 1000) {
             int hundredsdigit = (int) Math.floor(number / 100);
