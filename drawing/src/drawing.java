@@ -55,7 +55,8 @@ public class drawing {
                     result+= "\n" ;
                 }
                 System.out.println(result);
-            }
+            } case 0 -> System.exit(0);
+            default -> System.out.println("No choice!");
         }
     }
 }
