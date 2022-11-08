@@ -38,7 +38,6 @@ public class numbertostring {
             case 8 -> "eight ";
             default -> "nine ";
         };
-
     }
 
     public static String eletotweDigit(int number) {
@@ -53,12 +52,11 @@ public class numbertostring {
             case 17 -> "seventeen ";
             case 18 -> "eighteen ";
             default -> "nineteen ";
-
         };
     }
 
     public static String tensDigit(int number) {
-        int tensdigit =number / 10;
+        int tensdigit = number / 10;
         return switch (tensdigit) {
             case 2 -> "twenty ";
             case 3 -> "thirty ";
