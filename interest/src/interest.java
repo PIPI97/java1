@@ -11,10 +11,10 @@ public class interest {
         double interest = sc.nextDouble();
         System.out.println("Enter month");
         int month = sc.nextInt();
-        double amount = money*((interest/100)/12)*month;
-        NumberFormat df = new DecimalFormat("#,###.00");
+        double amount = money*Math.pow((1+((interest/100))/12),month);
+        NumberFormat df = new DecimalFormat("#,###");
         String str = df.format(amount);
-        System.out.println("interest amount: "+str +"vnd");
+        System.out.println("your money: "+str +"vnd");
 
     }
 }
