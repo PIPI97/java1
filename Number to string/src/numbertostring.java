@@ -1,4 +1,3 @@
-import com.sun.tools.jconsole.JConsolePlugin;
 
 import java.util.Scanner;
 
@@ -9,125 +8,67 @@ public class numbertostring {
         int number = sc.nextInt();
         String result = "";
         if (number < 0) {
-            result = "this is too small";
+            result = "Too small";
         } else if (number == 0) {
             result = "zero";
         } else if (number < 100) {
             result = hundredsDigit(number);
         } else if (number < 1000) {
-            int hundredsdigit = (int) Math.floor(number / 100);
+            int hundredsdigit = number / 100;
             result += onesDigit(hundredsdigit) + "hundred ";
             int tensdigit = number % 100;
             result += hundredsDigit(tensdigit);
         } else if (number == 1000)
             result = "one thousand";
         else {
-            result = " this is too big";
+            result = "Too large";
         }
         System.out.println(result);
     }
 
     public static String onesDigit(int onesdigit) {
-        String result = "";
-        switch (onesdigit) {
-            case 1:
-                result += "one ";
-                break;
-            case 2:
-                result += "two ";
-                break;
-            case 3:
-                result += "three ";
-                break;
-            case 4:
-                result += "four ";
-                break;
-            case 5:
-                result += "five ";
-                break;
-            case 6:
-                result += "six ";
-                break;
-            case 7:
-                result += "seven ";
-                break;
-            case 8:
-                result += "eight ";
-                break;
-            case 9:
-                result += "nine ";
-                break;
-        }
-        return result;
+        return switch (onesdigit) {
+            case 1 -> "one ";
+            case 2 -> "two ";
+            case 3 -> "three ";
+            case 4 -> "four ";
+            case 5 -> "five ";
+            case 6 -> "six ";
+            case 7 -> "seven ";
+            case 8 -> "eight ";
+            default -> "nine ";
+        };
+
     }
 
     public static String eletotweDigit(int number) {
-        String result = "";
-        switch (number) {
-            case 10:
-                result = "ten ";
-                break;
-            case 11:
-                result = "eleven ";
-                break;
-            case 12:
-                result = "twelve ";
-                break;
-            case 13:
-                result = "thirteen ";
-                break;
-            case 14:
-                result = "fourteen ";
-                break;
-            case 15:
-                result = "fifteen ";
-                break;
-            case 16:
-                result = "sixteen ";
-                break;
-            case 17:
-                result = "seventeen ";
-                break;
-            case 18:
-                result = "eighteen ";
-                break;
-            case 19:
-                result = "nineteen ";
-                break;
-        }
-        return result;
+        return switch (number) {
+            case 10 -> "ten ";
+            case 11 -> "eleven ";
+            case 12 -> "twelve ";
+            case 13 -> "thirteen ";
+            case 14 -> "fourteen ";
+            case 15 -> "fifteen ";
+            case 16 -> "sixteen ";
+            case 17 -> "seventeen ";
+            case 18 -> "eighteen ";
+            default -> "nineteen ";
+
+        };
     }
 
     public static String tensDigit(int number) {
-        String result = "";
-        int tensdigit = (int) Math.floor(number / 10);
-        switch (tensdigit) {
-            case 2:
-                result += "twenty ";
-                break;
-            case 3:
-                result += "thirty ";
-                break;
-            case 4:
-                result += "forty ";
-                break;
-            case 5:
-                result += "fifty ";
-                break;
-            case 6:
-                result += "sixty ";
-                break;
-            case 7:
-                result += "seventy ";
-                break;
-            case 8:
-                result += "eighty ";
-                break;
-            case 9:
-                result += "ninety ";
-                break;
-        }
-        return result;
+        int tensdigit =number / 10;
+        return switch (tensdigit) {
+            case 2 -> "twenty ";
+            case 3 -> "thirty ";
+            case 4 -> "forty ";
+            case 5 -> "fifty ";
+            case 6 -> "sixty ";
+            case 7 -> "seventy ";
+            case 8 -> "eighty ";
+            default -> "ninety ";
+        };
     }
 
     public static String hundredsDigit(int number) {
